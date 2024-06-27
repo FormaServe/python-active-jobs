@@ -2,6 +2,7 @@
 <head><title>Active Job Dashboard</title>
 <script src="https://code.jquery.com/jquery-3.2.0.min.js" integrity="sha256-JAW99MJVpJBGcbzEuXk4Az05s/XyDdBomFqNlM3ic+I=" crossorigin="anonymous"></script>
 <script type="text/javascript" src="tablesorter/jquery.tablesorter.min.js"></script>
+<link rel="icon" href="/static/favicon.ico" type="image/x-icon">
 
 <script>
 function submit(reset) {
@@ -12,7 +13,7 @@ function submit(reset) {
 }
 function refresh() { submit(false); }
 function reset() { submit(true); }
-$(document).ready(function() { 
+$(document).ready(function() {
     var table = $("#job_info_table");
     var sorting = $("#sorting").val();
     table.tablesorter({ sortList: JSON.parse(sorting) });

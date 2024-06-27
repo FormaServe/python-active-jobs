@@ -1,6 +1,18 @@
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: 'Poppins', sans-serif;
+}
+
+.custom-class {
+  font-family: 'Poppins', sans-serif;
+}
+
 /* tables */
 table.tablesorter {
-  /* font-family: arial; */
+  font-family: 'Poppins', sans-serif;
   background-color: #CDCDCD;
   margin: 25px 25pt 25px;
   font-size: 10pt;

@@ -1,11 +1,20 @@
 #!/usr/bin/env python3
 
-from bottle import route, run, template, request
+from bottle import route, run, template, request, static_file
 from string import capwords
 import ibm_db_dbi as dbi
 
-conn = dbi.connect(dsn=None, database='*LOCAL', \
-                       user=None, password=None)
+conn = dbi.connect(dsn=None, database='*LOCAL',
+                   user=None, password=None)
+
+# Route for serving static files
+
+
+@app.route('/static/<filename:path>')
+def serve_static(filename):
+    return static_file(filename, root='./static')
+
+
 @route('/', method=('GET', 'POST'))
 def root():
     reset = request.forms.get('reset') == 'true'
@@ -18,10 +27,10 @@ def root():
         'ELAPSED_ASYNC_DISK_IO_COUNT', 'ELAPSED_SYNC_DISK_IO_COUNT',
         'ELAPSED_CPU_PERCENTAGE',
         'ELAPSED_PAGE_FAULT_COUNT')
-    hide_cols = ( 'ELAPSED_TIME', )
+    hide_cols = ('ELAPSED_TIME', )
     all_cols = show_cols + hide_cols
 
-    headers = [ titleize(col) for col in show_cols ]
+    headers = [titlePretty(col) for col in show_cols]
     column_string = ', '.join(all_cols)
 
     query = "select %s from table(qsys2.active_job_info(RESET_STATISTICS => ?)) x" % column_string
@@ -33,18 +42,21 @@ def root():
     row_data = []
 
     for row in cur:
-        row_data.append(row[0 : len(show_cols)])
+        row_data.append(row[0: len(show_cols)])
         elapsed_time = row[-1]
 
     return template('root', rows=row_data, headers=headers, elapsed_time=elapsed_time, sorting=sorting)
 
-def titleize(column):
+
+def titlePretty(column):
     title = column.replace('_', ' ')
     return capwords(title)
+
 
 @route('<path:re:/.*\.(js|css|gif)>')
 def static_assets(path):
     with open(path[1:], "rb") as f:
         return f.read()
+
 
 run(host='0.0.0.0', port=3636, debug=True, reloader=True)

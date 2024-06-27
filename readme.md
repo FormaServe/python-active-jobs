@@ -1,6 +1,6 @@
 # FormaServe Training - Python Examples
 
-<img src="/images/Logo.png" align="right">
+<img src="/static/images/Logo.png" align="right">
 
 This repository showcases FormaServe’s training capabilities and provides a simple WRKACTJOB web application.
 
@@ -17,6 +17,8 @@ Please note that this application only runs on the IBM i.
 * Clone this repository to your local machine.
 * Install the necessary dependencies (e.g., Python, etc.).
 * Run the application using the provided scripts.
+
+**It is advised to check-out & run the section on virtual environments with python before proceeding with the install of this app.**
 
 ## Pre-req's
 
