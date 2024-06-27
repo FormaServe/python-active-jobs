@@ -3,6 +3,7 @@
 <script src="https://code.jquery.com/jquery-3.2.0.min.js" integrity="sha256-JAW99MJVpJBGcbzEuXk4Az05s/XyDdBomFqNlM3ic+I=" crossorigin="anonymous"></script>
 <script type="text/javascript" src="tablesorter/jquery.tablesorter.min.js"></script>
 <link rel="icon" href="/static/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="tablesorter/style.css">
 
 <script>
 function submit(reset) {
@@ -19,7 +20,7 @@ $(document).ready(function() {
     table.tablesorter({ sortList: JSON.parse(sorting) });
 });
 </script>
-<link rel="stylesheet" href="tablesorter/style.css">
+
 <style>
 #header {
     width: 600px;
