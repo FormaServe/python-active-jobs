@@ -5,6 +5,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
 /* Set a nice font family (Poppins) for the entire app */
@@ -14,23 +15,23 @@ body {
 
 h1 {
   font-family: 'Poppins', sans-serif;
-  text-align: left;
+  text-align: center;
   padding: 50px;
   font-size: 48px;
-  color: green;
+  color: red;
 }
 
 h2 {
   font-family: 'Poppins', sans-serif;
-  text-align: left;
+  text-align: center;
   padding: 30px;
   font-size: 38px;
-  color: green;
+  color: blue;
 }
 
 /* Container for the todo app */
 .container {
-  /* max-width: 600px; */
+  max-width: 600px;
   margin: 0 auto;
   padding: 20px;
   background-color: #f9f9f9;

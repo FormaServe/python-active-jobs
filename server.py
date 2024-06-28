@@ -10,7 +10,7 @@ conn = dbi.connect(dsn=None, database='*LOCAL',
 # Route for serving static files
 
 
-@app.route('/static/<filename:path>')
+@route('/static/<filename:path>')
 def serve_static(filename):
     return static_file(filename, root='./static')
 
@@ -45,7 +45,7 @@ def root():
         row_data.append(row[0: len(show_cols)])
         elapsed_time = row[-1]
 
-    return template('root', rows=row_data, headers=headers, elapsed_time=elapsed_time, sorting=sorting)
+    return template('./static/root', rows=row_data, headers=headers, elapsed_time=elapsed_time, sorting=sorting)
 
 
 def titlePretty(column):
