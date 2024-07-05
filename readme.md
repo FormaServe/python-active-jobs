@@ -14,30 +14,36 @@ Please note that this application only runs on the IBM i.
 
 ## Installation
 
-* Clone this repository to your local machine.
-* Install the necessary dependencies (e.g., Python, etc.).
-* Run the application using the provided scripts.
+Clone this repository to your local machine
 
-**It is advised to check-out & run the section on virtual environments with python before proceeding with the install of this app.**
+```bash
+git clone https://github.com/FormaServe/python-active-jobs.git
 
-## Pre-req's
+```
 
-Insure that you use PIP to install the following packages (pip install bottle etc).
+## Install dependencies
 
-- bottle
-- ibm_db
-- itoolkit
+Install the dependencies for this application
+
+```bash
+pip install pandas bottle ibm_db toolkit
+```
+
+## Note
+
+It is advised to check-out & run the section on virtual environments with python after the install of this app.
 
 ## Running
 
 Start the server by running, in an IBM i shell session;
 
-```
+```bash
 python server.py
 ```
 
 then point your browser to the following;
-```
+
+```bash
 your_ibmi:3636
 ```
 
@@ -59,8 +65,6 @@ Replace .venv with your preferred name for the virtual environment.
 
 To activate the virtual environment, use the appropriate command based on your operating system:\
 
-#### On IBM i
-
 ```bash
 source ~/.venv/bin/activate
 ```
@@ -73,7 +77,9 @@ When you’re done working in the virtual environment, deactivate it:
 deactivate
 ```
 
-**Remember to activate it whenever you work on your project. 😊**
+## Note
+
+Remember to activate your virtual environment whenever you work on your project. 😊
 
 ## License
 
