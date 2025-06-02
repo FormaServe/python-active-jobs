@@ -30,7 +30,7 @@
 
 <body>
   <div class='container mt-3'>
-    <h1 class="text-primary">Work Active Jobs on Galatea</h1>
+    <h1 class="text-primary">Work Active Jobs for FormaServe</h1>
 
     <div class='container'>
       <h4 class="mt-3">Elapsed time: {{elapsed_time}} seconds</h4>
