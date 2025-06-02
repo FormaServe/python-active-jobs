@@ -26,7 +26,7 @@ git clone https://github.com/FormaServe/python-active-jobs.git
 Install the dependencies for this application
 
 ```bash
-pip install pandas bottle ibm_db toolkit
+pip install pandas bottle ibm_db
 ```
 
 ## Note
